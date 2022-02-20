@@ -2,6 +2,7 @@ let source = "";
 let target = "";
 
 chrome.storage.sync.get("url", (items) => {
+  if (!!!items["url"]){return;}
   source = items["url"][0]["source"];
   target = items["url"][0]["target"];
   changeAll();

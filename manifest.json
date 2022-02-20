@@ -23,6 +23,7 @@
   "permissions": [ "storage", "webRequest" ],
   "host_permissions": [ "<all_urls>" ],
   "content_security_policy": {
-    "extension_pages": "script-src 'self'; object-src 'self'; script-src-elem 'self' 'unsafe-inline' https://cdn.jsdelivr.net/;"
+    "extension_pages": "script-src 'self'; object-src 'self'; script-src-elem 'self' 'unsafe-inline' https://cdn.jsdelivr.net/;",
+    "sandbox": "sandbox allow-scripts; script-src 'self' 'https://cdn.jsdelivr.net/'; object-src *; style-src *;"
   }
 }
