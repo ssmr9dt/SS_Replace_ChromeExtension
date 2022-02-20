@@ -21,5 +21,5 @@
   "options_page": "options.html",
 
   "permissions": [ "storage", "webRequest", "webRequestBlocking", "<all_urls>" ],
-  "content_security_policy": "script-src 'self' https://cdn.jsdelivr.net/; style-src 'self'; object-src 'self'"
+  "content_security_policy": "script-src 'self' https://cdn.jsdelivr.net/; style-src *; object-src 'self'"
 }

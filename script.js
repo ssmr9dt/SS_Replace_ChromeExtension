@@ -1,6 +1,8 @@
 let source = "";
 let target = "";
 
+console.log("hoge");
+
 chrome.storage.sync.get("url", (items) => {
   if (!!!items["url"]){return;}
   source = items["url"][0]["source"];
