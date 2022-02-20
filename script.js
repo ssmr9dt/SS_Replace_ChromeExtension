@@ -10,6 +10,7 @@ chrome.storage.sync.get("url", (items) => {
 });
 
 function changeAll() {
+  if (source == "") { return; }
   replaceElements("link", "href");
   replaceElements("a", "href");
   replaceElements("a", "data-user-api-token-reset-url");
@@ -28,6 +29,7 @@ function changeAll() {
 }
 
 function changeURL() {
+  if (source == "") { return; }
   if (location.href.indexOf(source) >= 0) {
     let newURL = location.href.replace(source,target);
     location.replace(newURL);
