@@ -8,7 +8,6 @@ function Load() {
   let keys = ["source", "target"];
   keys.forEach((e,i) => {
     chrome.storage.sync.get("url", (items) => { // magic number...
-      console.log(items);
       if (!!!items["url"]) { return; }
       if (!!!items["url"][0][e]) { return; }
       let item = items["url"][0];
