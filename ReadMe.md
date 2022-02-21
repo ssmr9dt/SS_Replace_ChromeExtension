@@ -16,5 +16,5 @@ This is useful for sites that are only allowed to be viewed from within the comp
 https://example.com/ -> https://localhost:5001/
 ```
 ``` html
-<a href="http://example.com/example/index.js>JS</a> -> <a href="http://localhost:5001/example/index.js>JS</a>
+<a href="http://example.com/example/index.js">JS</a> -> <a href="http://localhost:5001/example/index.js">JS</a>
 ```
