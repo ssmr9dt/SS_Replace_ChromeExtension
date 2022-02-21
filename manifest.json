@@ -24,6 +24,6 @@
   "host_permissions": [ "<all_urls>" ],
   "content_security_policy": {
     "extension_pages": "script-src 'self'; object-src 'self'; script-src-elem 'self' 'unsafe-inline';",
-    "sandbox": "sandbox allow-scripts; script-src *; object-src *; style-src *;"
+    "sandbox": "sandbox allow-scripts; script-src 'self'; object-src *; style-src *;"
   }
 }

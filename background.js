@@ -12,6 +12,6 @@ chrome.storage.sync.get("url", (items) => {
       return {};
     },
     { urls: ["<all_urls>"] },
-    ["blocking"]
+    []
   );
 });
