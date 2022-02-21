@@ -1,5 +1,5 @@
 {
-  "manifest_version": 3,
+  "manifest_version": 2,
   "name": "SS_Replace_ChromeExtension",
   "description": "HTML replace and Redirector",
   "version": "1.0.0",
@@ -10,7 +10,7 @@
     "512": "icons/icon512.png"
   },
 
-  "background": { "service_worker": "background.js" },
+  "background": { "scripts": ["background.js"] },
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
@@ -20,10 +20,5 @@
   ],
   "options_page": "options.html",
 
-  "permissions": [ "storage", "webRequest" ],
-  "host_permissions": [ "<all_urls>" ],
-  "content_security_policy": {
-    "extension_pages": "script-src 'self'; object-src 'self'; script-src-elem 'self' 'unsafe-inline' https://cdn.jsdelivr.net/;",
-    "sandbox": "sandbox allow-scripts; script-src *; object-src *; style-src *;"
-  }
+  "permissions": [ "storage", "webRequest", "webRequestBlocking" ]
 }
