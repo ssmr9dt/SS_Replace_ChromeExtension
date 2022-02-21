@@ -11,21 +11,18 @@ chrome.storage.sync.get("url", (items) => {
 
 function changeAll() {
   if (source == "") { return; }
-  replaceElements("link", "href");
-  replaceElements("a", "href");
-  replaceElements("a", "data-user-api-token-reset-url");
-  replaceElements("a", "data-update-order-url");
-  replaceElements("a", "data-comment-edit-url");
-  replaceElements("a", "data-attachment-swlock-url");
-  replaceElements("a", "data-create-relation-url");
-  replaceElements("img", "src");
-  replaceElements("button", "data-update-order-url");
-  replaceElements("form", "action");
-  replaceElements("input", "value")
-  replaceElements("script", "src");
-  replaceElements("option", "value");
-  replaceElements("li", "data-url");
-  replaceElements("ul", "data-url");
+
+  let elements = document.getElementsByTagName("*");
+  for (let i = elements.length - 1; i >= 0; i--) {
+    if (elements[i].getAttribute("ss_replace") == "true") {continue;}
+    if (elements[i].hasAttributes()) {
+      let attributes = elements[i].attributes;
+      for (let k = attributes.length - 1; k >= 0; k--) {
+        replaceElements(elements[i].localName, attributes[k].name);
+      }
+    }
+    elements[i].setAttribute("ss_replace","true");
+  }
 }
 
 function changeURL() {
