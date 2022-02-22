@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
-  "name": "SS_Replace_ChromeExtension",
-  "description": "HTML replace and Redirector",
+  "name": "SS_Replace",
+  "description": "HTML option replace and Redirector",
   "version": "1.0.1",
   "icons": {
     "16": "icons/icon16.png",
@@ -20,7 +20,7 @@
   ],
   "options_page": "options.html",
 
-  "permissions": [ "storage", "webRequest" ],
+  "permissions": [ "storage" ],
   "host_permissions": [ "<all_urls>" ],
   "content_security_policy": {
     "extension_pages": "script-src 'self'; object-src 'self'; script-src-elem 'self' 'unsafe-inline';",
