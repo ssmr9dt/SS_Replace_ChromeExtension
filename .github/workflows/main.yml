@@ -1,0 +1,35 @@
+# This is a basic workflow to help you get started with Actions
+
+name: crx artifacts to release
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - id: packExtensionDir
+        uses: cardinalby/webext-buildtools-pack-extension-dir-action@v1
+        with:
+          extensionDir: "."
+          zipFilePath: "build/SS_Replace.zip"
+      
+      - uses: cardinalby/webext-buildtools-chrome-crx-action@v2
+        with:
+          zipFilePath: "build/SS_Replace.zip"
+          crxFilePath: "build/SS_Replace.crx"
+          privateKey: ${{ secrets.CHROME_CRX_PRIVATE_KEY }},
+          
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: build/SS_Replace.crx
