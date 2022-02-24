@@ -1,4 +1,4 @@
-chrome.storage.sync.get("url", (items) => {
+chrome.storage.local.get("url", (items) => {
   if (!!!items["url"]) { return; }
   let source = items["url"][0]["source"];
   let target = items["url"][0]["target"];

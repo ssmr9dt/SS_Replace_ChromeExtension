@@ -1,7 +1,7 @@
 let source = "";
 let target = "";
 
-chrome.storage.sync.get("url", (items) => {
+chrome.storage.local.get("url", (items) => {
   if (!!!items["url"]){return;}
   source = items["url"][0]["source"];
   target = items["url"][0]["target"];
@@ -37,7 +37,7 @@ function replaceElements(tag_name, attr_name) {
   if (source === "") { return; }
   let tag_elements = document.getElementsByTagName(tag_name);
 
-  for (let i=0,i_max=tag_elements.length; i<i_max; i++) {
+  for (let i = tag_elements.length - 1; i >= 0; i--) {
     let tag_element = tag_elements[i];
     if (!!tag_element.getAttribute(attr_name)) {
       let source_attr = tag_element.getAttribute(attr_name);
