@@ -27,7 +27,6 @@ jobs:
         with:
           zipFilePath: "build/SS_Replace.zip"
           crxFilePath: "build/SS_Replace.crx"
-          privateKey: ${{ secrets.CHROME_CRX_PRIVATE_KEY }},
           
       - name: Release
         uses: softprops/action-gh-release@v1
